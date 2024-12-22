@@ -1,0 +1,29 @@
+server:
+  port: 8086
+#  servlet:
+#    context-path: /org-note-service
+
+springdoc:
+  api-docs:
+    enabled: true
+#    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+#    path: /swagger-ui/index.html
+
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  datasource:
+    url: jdbc:mysql://sql8.freesqldatabase.com/sql8753511
+    username: sql8753511
+    password: ues67S4Y9x
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
