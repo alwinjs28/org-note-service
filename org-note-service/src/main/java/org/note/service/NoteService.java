@@ -9,6 +9,7 @@ import org.note.util.NoteUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -27,6 +28,8 @@ public class NoteService {
             throw new BadRequestException(INPUT_REQUEST_MANDATORY);
         }
         Note note = NoteUtil.convertToNote(noteDto);
+        note.setCreateAt(new Date());
+        note.setUpdateAt(null);
         noteRepository.save(note);
     }
 
@@ -54,6 +57,7 @@ public class NoteService {
         Note note = noteOptional.get();
         note.setTitle(noteDto.getTitle() != null ? noteDto.getTitle() : note.getTitle());
         note.setContent(noteDto.getContent() != null ? noteDto.getContent() : note.getContent());
+        note.setUpdateAt(new Date());
         Note updatedNote = noteRepository.save(note);
 
         return NoteUtil.convertToNoteDto(updatedNote);

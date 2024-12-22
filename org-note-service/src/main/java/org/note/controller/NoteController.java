@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "notes")
+@RequestMapping
 public class NoteController {
 
     @Autowired
     private NoteService noteService;
 
-    @PostMapping("api/notes")
+    @PostMapping("/api/notes")
     @Operation(
             summary = "Create a new note with a title and content.",
             description = "This endpoint allows users to create a new note by providing the necessary note details (title, content, etc.) in the request body."
@@ -27,7 +27,7 @@ public class NoteController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @GetMapping("api/notes/{id}")
+    @GetMapping("/api/notes/{id}")
     @Operation(
             summary = "Retrieve a single note.",
             description = "Retrieve a single note by its ID."
@@ -37,7 +37,7 @@ public class NoteController {
         return new ResponseEntity<>(noteDto, HttpStatus.OK);
     }
 
-    @GetMapping("api/notes")
+    @GetMapping("/api/notes")
     @Operation(
             summary = "Retrieve all the available notes.",
             description = "Retrieve a list of all available notes."
@@ -47,7 +47,7 @@ public class NoteController {
         return new ResponseEntity<>(noteDtos, HttpStatus.OK);
     }
 
-    @PutMapping("api/notes/{id}")
+    @PutMapping("/api/notes/{id}")
     @Operation(
             summary = "Update the title and content of an existing note.",
             description = "Update the title and content of an existing note by providing its ID."
@@ -57,7 +57,7 @@ public class NoteController {
         return new ResponseEntity<>(updatedNote, HttpStatus.OK);
     }
 
-    @DeleteMapping("api/notes/{id}")
+    @DeleteMapping("/api/notes/{id}")
     @Operation(
             summary = "Delete a note by its ID.",
             description = "Delete a note by its ID."
