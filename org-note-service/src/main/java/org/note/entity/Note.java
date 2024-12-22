@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 
+//@Data - Somehow my editor not picking this up, so commenting it out and creating getter/setter manually
 @Entity
 @Table(name = "NOTE")
 public class Note {

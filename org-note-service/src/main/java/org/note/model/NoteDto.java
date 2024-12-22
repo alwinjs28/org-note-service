@@ -3,6 +3,7 @@ package org.note.model;
 import java.io.Serializable;
 import java.util.Date;
 
+//@Data - Somehow my editor not picking this up, so commenting it out and creating getter/setter manually
 public class NoteDto implements Serializable {
 
     private Long id;

@@ -58,7 +58,14 @@
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.0.3</version>
         </dependency>
-
+        <!--
+//@Data - Somehow my editor not picking this up, so commenting it out and creating getter/setter manually
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version> &lt;!&ndash; Latest version at the time &ndash;&gt;
+            <scope>provided</scope> &lt;!&ndash; Lombok is not required at runtime &ndash;&gt;
+        </dependency>-->
     </dependencies>
 
     <build>
