@@ -1,0 +1,19 @@
+server:
+  port: 8086
+#  servlet:
+#    context-path: /org-note-service
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://sql8.freesqldatabase.com/sql8753511
+    username: sql8753511
+    password: ues67S4Y9x
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
